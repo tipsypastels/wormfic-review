@@ -61,7 +61,7 @@ async fn main() -> anyhow::Result<()> {
         Command::Add(cmd) => add(&config, &mut fics, cmd).await,
         Command::Crawl(cmd) => crawl(cmd).await,
         Command::Upload => upload(&config, &fics).await,
-        Command::Check => check(&fics),
+        Command::Check => check(&mut fics).await,
     }
 }
 
@@ -88,8 +88,9 @@ async fn upload(config: &Config, fics: &Fics) -> anyhow::Result<()> {
     Ok(())
 }
 
-fn check(fics: &Fics) -> anyhow::Result<()> {
-    // TODO: Have this load and validate all values.
+async fn check(fics: &mut Fics) -> anyhow::Result<()> {
+    fics.crawl().await?;
+
     println!("Ok! {} fic(s) in CSV.", fics.count());
     Ok(())
 }

@@ -35,6 +35,14 @@ impl Fics {
         self.fics.len()
     }
 
+    pub async fn crawl(&mut self) -> anyhow::Result<()> {
+        for fic in &mut self.fics {
+            fic.crawl().await?;
+        }
+
+        Ok(())
+    }
+
     pub async fn add(&mut self, mut fic: Fic, crawl: bool) -> anyhow::Result<()> {
         if crawl {
             fic.crawl().await?;
