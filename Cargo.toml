@@ -1,0 +1,19 @@
+[package]
+name = "wormfic-review"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.75"
+async-trait = "0.1.73"
+camino = { version = "1.1.6", features = ["serde", "serde1"] }
+enum-assoc = "1.1.0"
+reqwest = "0.11.18"
+scraper = "0.17.1"
+serde = { version = "1.0.183", features = ["derive"] }
+serde_yaml = "0.9.25"
+structopt = "0.3.26"
+thousands = "0.2.0"
+tokio = { version = "1.32.0", features = ["full"] }
+toml = "0.7.6"
+url = { version = "2.4.0", features = ["serde"] }
