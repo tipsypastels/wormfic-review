@@ -1,12 +1,5 @@
 use crate::config::Config;
-use google_sheets4::{
-    hyper, hyper_rustls,
-    oauth2::{
-        read_application_secret, ApplicationSecret, InstalledFlowAuthenticator,
-        InstalledFlowReturnMethod,
-    },
-    Sheets,
-};
+use google_sheets4::{hyper, hyper_rustls, Sheets};
 
 mod auth;
 

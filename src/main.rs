@@ -2,9 +2,9 @@ use self::{
     config::Config,
     fics::{Fic, Fics},
     rating::Rating,
+    sheets::Sheet,
 };
 use camino::Utf8PathBuf;
-use sheet::Sheet;
 use structopt::StructOpt;
 use url::Url;
 
@@ -13,7 +13,7 @@ mod count;
 mod crawl;
 mod fics;
 mod rating;
-mod sheet;
+mod sheets;
 
 #[derive(StructOpt, Debug)]
 #[structopt(about = "dakota's tool for building her wormfic spreadsheet")]
