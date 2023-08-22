@@ -1,3 +1,6 @@
 /target
+
 fics.config.toml
 fics.yml
+fics.secrets.json
+fics.tokens.cache

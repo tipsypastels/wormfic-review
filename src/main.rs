@@ -4,6 +4,7 @@ use self::{
     rating::Rating,
 };
 use camino::Utf8PathBuf;
+use sheet::Sheet;
 use structopt::StructOpt;
 use url::Url;
 
@@ -12,6 +13,7 @@ mod count;
 mod crawl;
 mod fics;
 mod rating;
+mod sheet;
 
 #[derive(StructOpt, Debug)]
 #[structopt(about = "dakota's tool for building her wormfic spreadsheet")]
@@ -85,6 +87,8 @@ async fn crawl(cmd: CrawlCommand) -> anyhow::Result<()> {
 }
 
 async fn upload(config: &Config, fics: &Fics) -> anyhow::Result<()> {
+    let sheet = Sheet::new(config).await?;
+
     Ok(())
 }
 

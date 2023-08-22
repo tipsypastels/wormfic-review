@@ -12,4 +12,7 @@ pub fn read(path: &Utf8Path) -> anyhow::Result<Config> {
 }
 
 #[derive(Debug, Deserialize)]
-pub struct Config {}
+pub struct Config {
+    pub spreadsheet: String,
+    pub port: u16,
+}

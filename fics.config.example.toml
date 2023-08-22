@@ -1,0 +1,7 @@
+# The ID of the spreadsheet. This is a UUID string that can be extracted from the page URL.
+spreadsheet = "<the ID of my wormfic spreadsheet>"
+
+# The port to use for OAuth2 authentication redirects. This must match the port used in
+# configuring the "Authorized Javascript origins" and "Authorized redirect URIs" via
+# the google developer credentials interface.
+port = 3000

@@ -25,10 +25,6 @@ impl<'a> Elem<'a> {
         self.0.text().collect::<String>().trim().into()
     }
 
-    pub fn as_usize(&self) -> Result<usize, <usize as FromStr>::Err> {
-        self.text().replace(',', "").parse()
-    }
-
     pub fn parse<T: FromStr>(&self) -> Result<T, T::Err> {
         self.text().parse()
     }
